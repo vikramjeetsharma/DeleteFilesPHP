@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2 align="center"> Press the below button to flush your chache</h2> <br><br>
+		<form id="confirmForm" action="delete.php" method="post">
+		<p align="center">
+		     	<input type="submit" name="submit" onClick=confirmation() value="Delete Cache"> <!--create a button and called a function named confiration() -->
+         </p>
+		</form>
+		
+        <script type=text/javascript>
+			function confirmation(){
+				userInput=confirm(" Are you sure ? \n Press OK to delete cache or Cancel to exit"); //store user input true (if press OK) or false (if press cancel) button
+				if(userInput==true)  //tsting against user input if it true than we procede to clear his cache
+				{
+					//calling of php function to clear cache will go here 
+					document.confirmForm.submit()
+								
+				}
+			else{
+				document.write("<h1 align='center'> Skipping File Deletion Operation. </h1>"); //display a message
+				}
+			}
+		</script>
+
+</body>
+</html>
